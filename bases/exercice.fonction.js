@@ -91,10 +91,81 @@
  *  -Fonction Anonyme
  *  -Fonction Fléchée
  */
+//-Fonctions nommées
+  /** for of  */
+ function recherche(tableau,val){
+     for (let elt of tableau) {
+         if(elt==val) return true; 
+     }
+     return false;
+ }
+ /**Fonction Foreach */
+ function recherche1(tableau,val){
+       tableau.forEach((elt)=>{
+        if(elt==val) return true; 
+       })
+       return false;
+ }
 
+//Appel 
+var tab=[5,8,9,9]
+var resultat=recherche(tab,9);
+
+
+//-Fonction Anonyme
+ recherche=function(tableau,val){
+    for (let elt of tableau) {
+        if(elt==val) return true; 
+    }
+    return false;
+}
+//-Fonction Féchée
+    recherche=(tableau,val)=>{
+        for (let elt of tableau) {
+            if(elt==val) return true; 
+        }
+        return false;
+    }
 /**
  * Fonction qui verifie si un email est valide ou pas
+ *     *contenir un @ 
+ *     *contenir un point 
+ *     *server (gmail,yahoo,hotmail,being)
+ *     *extension (com,fr,sn)
  *  -Fonctions nommées
  *  -Fonction Anonyme
  *  -Fonction Fléchée
  */
+
+function isEmail(email){
+    const server=["gmail","yahoo","hotmail"]
+    const extension=["fr","com","sn"]
+    email=email.toLowerCase()
+    if(email.indexOf("@")==-1 || email.indexOf(".")==-1){
+        return false;
+    }
+    //Server
+    let ok=false;
+    for (let elt of server) {
+        if(email.indexOf(elt)!=-1) {
+           ok=true;
+           break;
+        }
+    }
+     if(ok==false){
+         return false;
+     }
+//Extension
+     let ok=false;
+    for (let elt of extension) {
+        if(email.indexOf(elt)!=-1) {
+           ok=true;
+           break;
+        }
+    }
+     if(ok==false){
+         return false;
+     }
+    
+        return true;
+}

@@ -1,0 +1,24 @@
+*{
+    box-sizing: border-box;
+}
+body{
+    background-color: whitesmoke;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+button{
+    border: solid 1px white;
+    border-radius: 10px;
+    background-color: teal;
+    padding: 2rem;
+    font-size: 14px;
+}
+button.cliquemoi{
+    color:white;
+}
+button.tumasclique{
+    color:yellow;
+}
